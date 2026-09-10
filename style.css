@@ -1,0 +1,1665 @@
+/* =====================================================
+   AUDRY DENTAL — MAIN STYLE
+===================================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f3f4f6;
+    color: #252b64;
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.header {
+    width: 100%;
+    height: 76px;
+    padding: 0 6%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    background: rgba(255,255,255,.94);
+    backdrop-filter: blur(14px);
+
+    border-bottom: 1px solid #eee;
+}
+
+.logo {
+    color: #252b64;
+    font: italic 28px 'Playfair Display';
+    line-height: .8;
+}
+
+.logo span {
+    display: block;
+    margin-top: 7px;
+
+    font: 8px 'DM Sans';
+    letter-spacing: 4px;
+    text-align: center;
+}
+
+.desktop-nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.desktop-nav a {
+    color: #555b78;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+
+    transition: .25s ease;
+}
+
+.desktop-nav a:hover {
+    color: #2853a4;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.header-actions button {
+    border: 0;
+    background: transparent;
+    color: #252b64;
+
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.menu-button {
+    display: none;
+}
+
+
+/* =====================================================
+   MOBILE MENU
+===================================================== */
+
+.mobile-menu {
+    display: none;
+
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+
+    background: white;
+}
+
+.mobile-menu-header {
+    height: 76px;
+    padding: 0 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid #eee;
+}
+
+.mobile-menu-header button {
+    border: 0;
+    background: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.mobile-menu a {
+    display: block;
+
+    padding: 18px 25px;
+
+    border-bottom: 1px solid #eee;
+
+    color: #252b64;
+    text-decoration: none;
+
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   SEARCH
+===================================================== */
+
+.search-box {
+    display: none;
+
+    position: fixed;
+    inset: 0;
+    z-index: 300;
+
+    background: rgba(20,25,60,.55);
+
+    padding: 30px;
+}
+
+.search-content {
+    max-width: 600px;
+    margin: 80px auto;
+
+    padding: 30px;
+
+    border-radius: 22px;
+
+    background: white;
+}
+
+.close-button {
+    float: right;
+
+    border: 0;
+    background: none;
+
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.search-content h2 {
+    margin-bottom: 20px;
+}
+
+.search-content input {
+    width: 100%;
+
+    padding: 15px;
+
+    border: 1px solid #cfd5e2;
+    border-radius: 12px;
+
+    outline: none;
+}
+
+#searchResult {
+    margin-top: 15px;
+
+    color: #686d87;
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+    min-height: 680px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero > img {
+    width: 100%;
+    height: 680px;
+    object-fit: cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(36,33,94,.86),
+            rgba(36,33,94,.12)
+        );
+}
+
+.hero-content {
+    max-width: 720px;
+
+    position: absolute;
+    left: 8%;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: white;
+}
+
+.hero-content p:first-child {
+    font-size: 12px;
+    letter-spacing: 3px;
+}
+
+.hero-content h1 {
+    margin: 18px 0;
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: clamp(44px, 6vw, 76px);
+    line-height: 1.05;
+}
+
+.hero-description {
+    max-width: 520px;
+
+    margin-bottom: 30px;
+
+    color: #eee;
+
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   BUTTON
+===================================================== */
+
+.btn-primary {
+    display: inline-block;
+
+    padding: 14px 22px;
+
+    border: 0;
+    border-radius: 12px;
+
+    background: #2853a4;
+    color: white;
+
+    text-decoration: none;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: .25s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+}
+
+.btn-light {
+    display: inline-block;
+
+    padding: 13px 20px;
+
+    border-radius: 11px;
+
+    background: white;
+    color: #252b64;
+
+    text-decoration: none;
+
+    font-weight: 700;
+}
+
+.full {
+    width: 100%;
+}
+
+
+/* =====================================================
+   BASIC SECTION
+===================================================== */
+
+.section {
+    padding: 90px 7%;
+}
+
+.blue-section {
+    background: #b9e0f1;
+}
+
+
+/* =====================================================
+   GRADIENT LABEL
+===================================================== */
+
+.gradient-label {
+    display: inline-block;
+
+    padding: 8px 14px;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #7dbde1,
+            #dca9cf
+        );
+
+    color: white;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    box-shadow: 0 5px 18px rgba(85,130,180,.18);
+}
+
+
+/* =====================================================
+   SERVICES INTRO
+===================================================== */
+
+.services-section {
+    background: #b9e0f1;
+}
+
+.services-intro {
+    max-width: 760px;
+    margin: 0 auto 45px;
+
+    text-align: center;
+}
+
+.services-intro h2 {
+    margin: 20px 0 15px;
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: clamp(34px, 5vw, 58px);
+    line-height: 1.1;
+}
+
+.services-intro h2 span,
+.all-services-heading h2 span,
+.why-content h2 span,
+.reviews-heading h2 span,
+.promo-text h2 span {
+    background:
+        linear-gradient(
+            90deg,
+            #2853a4,
+            #b66f9d
+        );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+}
+
+.services-intro p {
+    max-width: 650px;
+    margin: auto;
+
+    color: #5f6680;
+
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+
+/* =====================================================
+   HORIZONTAL SERVICE SLIDER
+===================================================== */
+
+.service-slider {
+    width: 100%;
+
+    display: flex;
+    gap: 20px;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    padding: 10px 3px 25px;
+
+    scroll-snap-type: x mandatory;
+
+    scrollbar-width: thin;
+    scrollbar-color: #8ba8c5 transparent;
+}
+
+.service-slider::-webkit-scrollbar {
+    height: 7px;
+}
+
+.service-slider::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.service-slider::-webkit-scrollbar-thumb {
+    background: #8ba8c5;
+    border-radius: 20px;
+}
+
+.service-card {
+    flex: 0 0 285px;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background: white;
+
+    box-shadow: 0 10px 30px rgba(20,40,80,.12);
+
+    scroll-snap-align: start;
+
+    transition: .3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-7px);
+}
+
+.service-card img {
+    width: 100%;
+    height: 210px;
+
+    object-fit: cover;
+}
+
+.service-card-content {
+    padding: 20px;
+}
+
+.service-card-content small {
+    color: #8296ad;
+    font-size: 10px;
+}
+
+.service-card-content h3 {
+    margin: 7px 0;
+
+    color: #252b64;
+
+    font-size: 18px;
+}
+
+.service-card-content p {
+    color: #727791;
+
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   SEE ALL SERVICES
+===================================================== */
+
+.see-all-services {
+    margin-top: 20px;
+
+    text-align: center;
+}
+
+.see-all-services a {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 13px 22px;
+
+    border-radius: 30px;
+
+    background: white;
+    color: #2853a4;
+
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    box-shadow: 0 5px 20px #0001;
+
+    transition: .25s ease;
+}
+
+.see-all-services a:hover {
+    transform: translateY(-2px);
+}
+
+
+/* =====================================================
+   WHY AUDRY DENTAL
+===================================================== */
+
+.why-section {
+    padding: 100px 7%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #f2e9f3
+        );
+}
+
+.why-content {
+    max-width: 750px;
+
+    margin: auto;
+
+    text-align: center;
+}
+
+.why-content h2 {
+    margin: 20px 0 15px;
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: clamp(35px, 5vw, 58px);
+    line-height: 1.1;
+}
+
+.why-content > p {
+    max-width: 650px;
+
+    margin: 10px auto;
+
+    color: #686d87;
+
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.why-grid {
+    max-width: 1100px;
+
+    margin: 55px auto 0;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 18px;
+}
+
+.why-card {
+    padding: 28px;
+
+    border-radius: 20px;
+
+    background: white;
+
+    box-shadow: 0 8px 25px #0000000c;
+
+    text-align: center;
+
+    transition: .3s ease;
+}
+
+.why-card:hover {
+    transform: translateY(-5px);
+}
+
+.why-card strong {
+    display: inline-flex;
+
+    width: 42px;
+    height: 42px;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: linear-gradient(135deg,#b9e0f1,#eed1e1);
+
+    color: #2853a4;
+
+    font-size: 12px;
+}
+
+.why-card h3 {
+    margin: 15px 0 8px;
+
+    font-size: 16px;
+}
+
+.why-card p {
+    color: #727791;
+
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   ALL SERVICES
+===================================================== */
+
+.all-services-section {
+    padding: 100px 7%;
+
+    background: #f8f9fb;
+}
+
+.all-services-heading {
+    max-width: 760px;
+
+    margin: auto auto 50px;
+
+    text-align: center;
+}
+
+.all-services-heading h2 {
+    margin: 20px 0 15px;
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: clamp(34px, 5vw, 56px);
+    line-height: 1.1;
+}
+
+.all-services-heading p {
+    color: #686d87;
+
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+
+/* LONG HORIZONTAL CARDS */
+
+.all-services-list {
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 16px;
+}
+
+.long-service-card {
+    min-height: 120px;
+
+    padding: 22px 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    border: 1px solid #e4e8ef;
+
+    border-radius: 18px;
+
+    background: white;
+
+    color: #252b64;
+
+    text-decoration: none;
+
+    box-shadow: 0 5px 18px #0000000a;
+
+    transition: .3s ease;
+}
+
+.long-service-card:hover {
+    transform: translateY(-4px);
+
+    border-color: #b9d8ed;
+
+    box-shadow: 0 12px 28px #00000012;
+}
+
+.long-service-card span {
+    color: #8b9ab0;
+
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.long-service-card h3 {
+    margin: 5px 0;
+
+    font-size: 17px;
+}
+
+.long-service-card p {
+    color: #727791;
+
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.long-service-card > b {
+    min-width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #eef5fb;
+
+    color: #2853a4;
+
+    font-size: 17px;
+}
+
+
+/* =====================================================
+   CLINIC / GALLERY
+===================================================== */
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+
+    gap: 50px;
+
+    margin-bottom: 45px;
+}
+
+.section-heading h2 {
+    max-width: 600px;
+
+    font-size: clamp(30px,4vw,45px);
+
+    line-height: 1.1;
+}
+
+.section-heading > p {
+    max-width: 400px;
+
+    color: #666d8a;
+
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.eyebrow {
+    margin-bottom: 10px;
+
+    color: #2853a4;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 3px;
+}
+
+.gallery {
+    display: grid;
+
+    grid-template-columns: 2fr 1fr 1fr;
+
+    grid-template-rows: 250px 250px;
+
+    gap: 12px;
+}
+
+.gallery img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 16px;
+}
+
+.gallery img:first-child {
+    grid-row: span 2;
+}
+
+
+/* =====================================================
+   DOCTOR
+===================================================== */
+
+.doctor-section {
+    padding: 100px 10%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 80px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eed1e1,
+            #b9e0f1
+        );
+}
+
+.doctor-image img {
+    width: 300px;
+    height: 390px;
+
+    object-fit: cover;
+
+    border-radius: 35px;
+}
+
+.doctor-content {
+    max-width: 500px;
+}
+
+.doctor-content h2 {
+    margin-bottom: 20px;
+
+    font-family: 'Playfair Display';
+
+    font-size: 52px;
+}
+
+.doctor-content > p:not(.eyebrow) {
+    margin-bottom: 25px;
+
+    color: #666;
+
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   FACILITIES
+===================================================== */
+
+.facility-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+}
+
+.facility-card {
+    overflow: hidden;
+
+    border-radius: 18px;
+
+    background: white;
+
+    box-shadow: 0 5px 20px #0001;
+}
+
+.facility-card img {
+    width: 100%;
+    height: 300px;
+
+    object-fit: cover;
+}
+
+.facility-card div {
+    padding: 25px;
+}
+
+.facility-card p {
+    margin-top: 8px;
+
+    color: #727791;
+
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   REVIEWS
+===================================================== */
+
+.reviews-section {
+    background: #ffffff;
+}
+
+.reviews-heading {
+    max-width: 700px;
+
+    margin: 0 auto 45px;
+
+    text-align: center;
+}
+
+.reviews-heading h2 {
+    margin: 20px 0 15px;
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: clamp(34px,5vw,55px);
+}
+
+.reviews-heading p {
+    color: #686d87;
+
+    font-size: 14px;
+}
+
+.review-slider {
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: flex;
+    gap: 18px;
+
+    overflow-x: auto;
+
+    padding: 5px 3px 20px;
+
+    scroll-snap-type: x mandatory;
+
+    scrollbar-width: thin;
+}
+
+.review-card {
+    flex: 0 0 330px;
+
+    padding: 25px;
+
+    border-radius: 20px;
+
+    background: #f8f9fb;
+
+    border: 1px solid #edf0f4;
+
+    scroll-snap-align: start;
+}
+
+.review-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 15px;
+}
+
+.stars {
+    color: #d9a637;
+
+    letter-spacing: 2px;
+}
+
+.review-top > span {
+    color: #2853a4;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.review-card p {
+    min-height: 80px;
+
+    margin-bottom: 20px;
+
+    color: #686d87;
+
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.review-card strong {
+    display: block;
+
+    color: #252b64;
+}
+
+.review-card small {
+    display: block;
+
+    margin-top: 4px;
+
+    color: #888;
+
+    font-size: 10px;
+}
+
+
+/* =====================================================
+   PROMO
+===================================================== */
+
+.promo-section {
+    padding: 90px 7%;
+
+    background: #f8f9fb;
+}
+
+.promo-box {
+    max-width: 1150px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    overflow: hidden;
+
+    border-radius: 28px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #244d9e,
+            #473d91
+        );
+
+    color: white;
+
+    box-shadow: 0 18px 40px #0002;
+}
+
+.promo-text {
+    padding: 65px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.promo-text .gradient-label {
+    align-self: flex-start;
+
+    background: rgba(255,255,255,.18);
+}
+
+.promo-text h2 {
+    margin: 20px 0;
+
+    font-family: 'Playfair Display';
+
+    font-size: clamp(38px,5vw,60px);
+
+    line-height: 1.05;
+}
+
+.promo-text h2 span {
+    color: #dcefff;
+    background: none;
+}
+
+.promo-text p {
+    max-width: 500px;
+
+    margin-bottom: 28px;
+
+    color: #e3e9ff;
+
+    line-height: 1.7;
+}
+
+.promo-image img {
+    width: 100%;
+    height: 100%;
+
+    min-height: 450px;
+
+    object-fit: cover;
+}
+
+
+/* =====================================================
+   BOOKING
+===================================================== */
+
+.booking-section {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 80px;
+
+    background: #f7f8fa;
+}
+
+.booking-info h2 {
+    margin-bottom: 20px;
+
+    font-family: 'Playfair Display';
+
+    font-size: 50px;
+}
+
+.booking-info > p:last-child {
+    color: #686d87;
+
+    line-height: 1.7;
+}
+
+.booking-form {
+    display: grid;
+    gap: 14px;
+}
+
+.booking-form input,
+.booking-form select {
+    width: 100%;
+
+    padding: 16px;
+
+    border: 1px solid #d4d9e2;
+
+    border-radius: 12px;
+
+    background: white;
+
+    font-family: inherit;
+
+    outline: none;
+}
+
+.booking-form input:focus,
+.booking-form select:focus {
+    border-color: #2853a4;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.footer {
+    padding: 60px 7% 100px;
+
+    background: #25205d;
+
+    color: white;
+}
+
+.footer .logo {
+    color: white;
+}
+
+.footer p {
+    max-width: 400px;
+
+    margin: 20px 0;
+
+    color: #ddd;
+
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.footer-bottom {
+    padding-top: 20px;
+
+    border-top: 1px solid #ffffff22;
+
+    color: #bbb;
+
+    font-size: 11px;
+}
+
+
+/* =====================================================
+   TOAST
+===================================================== */
+
+.toast {
+    display: none;
+
+    position: fixed;
+
+    bottom: 30px;
+    left: 50%;
+
+    z-index: 500;
+
+    transform: translateX(-50%);
+
+    padding: 13px 20px;
+
+    border-radius: 10px;
+
+    background: #222;
+    color: white;
+
+    font-size: 12px;
+}
+
+
+/* =====================================================
+   MOBILE BOTTOM NAV
+===================================================== */
+
+.bottom-nav {
+    display: none;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1000px) {
+
+    .desktop-nav {
+        gap: 15px;
+    }
+
+    .why-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .all-services-list {
+        grid-template-columns: 1fr;
+    }
+
+    .doctor-section {
+        padding-left: 7%;
+        padding-right: 7%;
+    }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+    body {
+        background: white;
+    }
+
+    /* HEADER */
+
+    .header {
+        height: 66px;
+        padding: 0 20px;
+    }
+
+    .desktop-nav {
+        display: none;
+    }
+
+    .menu-button {
+        display: inline-block;
+    }
+
+
+    /* HERO */
+
+    .hero,
+    .hero > img {
+        min-height: 620px;
+        height: 620px;
+    }
+
+    .hero-content {
+        left: 22px;
+        right: 22px;
+    }
+
+    .hero-content h1 {
+        font-size: 42px;
+    }
+
+    .hero-description {
+        font-size: 13px;
+    }
+
+
+    /* SECTION */
+
+    .section {
+        padding: 65px 20px;
+    }
+
+
+    /* SERVICES */
+
+    .services-section {
+        padding-left: 20px;
+        padding-right: 0;
+    }
+
+    .services-intro {
+        padding-right: 20px;
+        margin-bottom: 30px;
+    }
+
+    .services-intro h2 {
+        font-size: 36px;
+    }
+
+    .services-intro p {
+        font-size: 12px;
+    }
+
+    .service-slider {
+        gap: 14px;
+
+        padding-right: 20px;
+
+        scrollbar-width: none;
+
+        scroll-snap-type: x mandatory;
+    }
+
+    .service-slider::-webkit-scrollbar {
+        display: none;
+    }
+
+    .service-card {
+        flex: 0 0 78vw;
+
+        max-width: 300px;
+
+        border-radius: 18px;
+    }
+
+    .service-card img {
+        height: 190px;
+    }
+
+    .service-card-content {
+        padding: 17px;
+    }
+
+
+    .see-all-services {
+        padding-right: 20px;
+    }
+
+
+    /* WHY */
+
+    .why-section {
+        padding: 70px 20px;
+    }
+
+    .why-content h2 {
+        font-size: 38px;
+    }
+
+    .why-content > p {
+        font-size: 12px;
+    }
+
+    .why-grid {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 10px;
+
+        margin-top: 35px;
+    }
+
+    .why-card {
+        padding: 20px 14px;
+    }
+
+    .why-card h3 {
+        font-size: 14px;
+    }
+
+    .why-card p {
+        font-size: 10px;
+    }
+
+
+    /* ALL SERVICES */
+
+    .all-services-section {
+        padding: 70px 20px;
+    }
+
+    .all-services-heading h2 {
+        font-size: 37px;
+    }
+
+    .all-services-heading p {
+        font-size: 12px;
+    }
+
+    .all-services-list {
+        gap: 12px;
+    }
+
+    .long-service-card {
+        min-height: 105px;
+
+        padding: 18px;
+
+        border-radius: 16px;
+    }
+
+    .long-service-card h3 {
+        font-size: 15px;
+    }
+
+    .long-service-card p {
+        font-size: 10px;
+    }
+
+    .long-service-card > b {
+        min-width: 34px;
+        height: 34px;
+    }
+
+
+    /* SECTION HEADING */
+
+    .section-heading {
+        display: block;
+    }
+
+    .section-heading > p {
+        margin-top: 20px;
+    }
+
+
+    /* GALLERY */
+
+    .gallery {
+        grid-template-columns: 1fr 1fr;
+
+        grid-template-rows: 160px 160px;
+
+        gap: 8px;
+    }
+
+
+    /* DOCTOR */
+
+    .doctor-section {
+        padding: 70px 20px;
+
+        flex-direction: column;
+
+        gap: 30px;
+
+        text-align: center;
+    }
+
+    .doctor-image img {
+        width: 210px;
+        height: 280px;
+    }
+
+    .doctor-content h2 {
+        font-size: 40px;
+    }
+
+
+    /* FACILITIES */
+
+    .facility-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .facility-card img {
+        height: 220px;
+    }
+
+
+    /* REVIEWS */
+
+    .reviews-section {
+        padding-left: 20px;
+        padding-right: 0;
+    }
+
+    .reviews-heading {
+        padding-right: 20px;
+    }
+
+    .review-slider {
+        padding-right: 20px;
+
+        scrollbar-width: none;
+    }
+
+    .review-slider::-webkit-scrollbar {
+        display: none;
+    }
+
+    .review-card {
+        flex: 0 0 82vw;
+
+        max-width: 340px;
+    }
+
+
+    /* PROMO */
+
+    .promo-section {
+        padding: 60px 20px;
+    }
+
+    .promo-box {
+        grid-template-columns: 1fr;
+
+        border-radius: 22px;
+    }
+
+    .promo-text {
+        padding: 35px 25px;
+    }
+
+    .promo-text h2 {
+        font-size: 38px;
+    }
+
+    .promo-image img {
+        min-height: 230px;
+        height: 230px;
+    }
+
+
+    /* BOOKING */
+
+    .booking-section {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+    }
+
+    .booking-info h2 {
+        font-size: 40px;
+    }
+
+
+    /* FOOTER */
+
+    .footer {
+        padding-bottom: 100px;
+    }
+
+
+    /* BOTTOM NAV */
+
+    .bottom-nav {
+        position: fixed;
+
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        z-index: 150;
+
+        height: 70px;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: space-around;
+
+        background: rgba(255,255,255,.96);
+
+        backdrop-filter: blur(12px);
+
+        border-top: 1px solid #ddd;
+    }
+
+    .bottom-nav a {
+        color: #6b7088;
+
+        text-decoration: none;
+
+        text-align: center;
+
+        font-size: 9px;
+    }
+
+    .bottom-nav b {
+        display: block;
+
+        margin-bottom: 5px;
+
+        font-size: 18px;
+    }
+
+    .bottom-nav .active {
+        color: #2853a4;
+    }
+}
+
+
+/* =====================================================
+   VERY SMALL PHONES
+===================================================== */
+
+@media (max-width: 380px) {
+
+    .hero-content h1 {
+        font-size: 36px;
+    }
+
+    .service-card {
+        flex-basis: 82vw;
+    }
+
+    .why-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .long-service-card p {
+        display: none;
+    }
+}

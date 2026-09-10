@@ -1,0 +1,1905 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Audry Dental</title>
+
+
+    <!-- GOOGLE FONTS -->
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:ital,wght@1,500&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- CSS -->
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="header">
+
+    <div class="logo">
+        Audry
+        <span>DENTAL</span>
+    </div>
+
+
+    <nav class="desktop-nav">
+
+        <a href="#home">Beranda</a>
+
+        <a href="#services">Layanan</a>
+
+        <a href="#clinic">Klinik</a>
+
+        <a href="#doctor">Dokter</a>
+
+        <a href="#promo">Promo</a>
+
+        <a href="appointment.html">Appointment</a>
+
+    </nav>
+
+
+    <div class="header-actions">
+
+        <button
+            onclick="openSearch()"
+            aria-label="Cari"
+        >
+            ⌕
+        </button>
+
+
+        <button
+            class="menu-button"
+            onclick="openMenu()"
+            aria-label="Menu"
+        >
+            ☰
+        </button>
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     MOBILE MENU
+===================================================== -->
+
+<div
+    class="mobile-menu"
+    id="mobileMenu"
+>
+
+    <div class="mobile-menu-header">
+
+        <div class="logo">
+            Audry
+            <span>DENTAL</span>
+        </div>
+
+
+        <button
+            onclick="closeMenu()"
+            aria-label="Tutup menu"
+        >
+            ×
+        </button>
+
+    </div>
+
+
+    <a
+        href="#home"
+        onclick="closeMenu()"
+    >
+        Beranda
+    </a>
+
+
+    <a
+        href="#services"
+        onclick="closeMenu()"
+    >
+        Layanan
+    </a>
+
+
+    <a
+        href="#clinic"
+        onclick="closeMenu()"
+    >
+        Klinik
+    </a>
+
+
+    <a
+        href="#doctor"
+        onclick="closeMenu()"
+    >
+        Dokter
+    </a>
+
+
+    <a
+        href="#promo"
+        onclick="closeMenu()"
+    >
+        Promo
+    </a>
+
+
+    <a
+        href="#booking"
+        onclick="closeMenu()"
+    >
+        Appointment
+    </a>
+
+</div>
+
+
+
+<!-- =====================================================
+     SEARCH
+===================================================== -->
+
+<div
+    class="search-box"
+    id="searchBox"
+>
+
+    <div class="search-content">
+
+        <button
+            class="close-button"
+            onclick="closeSearch()"
+        >
+            ×
+        </button>
+
+
+        <h2>
+            Cari Layanan
+        </h2>
+
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Contoh: scaling..."
+            oninput="findService()"
+        >
+
+
+        <div id="searchResult">
+            Ketik nama layanan yang ingin dicari.
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<main>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section
+    class="hero"
+    id="home"
+>
+
+    <img
+        src="images/clinic-9.jpg"
+        alt="Audry Dental"
+    >
+
+
+    <div class="hero-overlay"></div>
+
+
+    <div class="hero-content">
+
+        <p>
+            RAWAT SENYUM, RAWAT PERCAYA DIRI.
+        </p>
+
+
+        <h1>
+            Senyum sehat untuk hidup yang lebih cerah.
+        </h1>
+
+
+        <p class="hero-description">
+            Perawatan gigi modern dengan pelayanan
+            nyaman, profesional, dan terpercaya.
+        </p>
+
+
+        <a
+            href="Appointment.html"
+            class="btn-primary"
+        >
+            Booking Sekarang →
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     OUR SERVICES
+===================================================== -->
+
+<section
+    class="section services-section"
+    id="services"
+>
+
+
+    <div class="services-intro">
+
+        <span class="gradient-label">
+            OUR SERVICES
+        </span>
+
+
+        <h2>
+            Perawatan gigi untuk
+            <span>senyum terbaikmu.</span>
+        </h2>
+
+
+        <p>
+            Kami menyediakan berbagai pilihan perawatan
+            gigi dan mulut dengan pelayanan yang nyaman,
+            profesional, dan disesuaikan dengan kebutuhan
+            setiap pasien.
+        </p>
+
+    </div>
+
+
+
+    <!-- SERVICE SLIDER -->
+
+    <div class="service-slider">
+
+
+        <!-- 01 -->
+
+        <article class="service-card">
+
+            <img
+                src="images/clinic-1.jpg"
+                alt="Behel Gigi"
+            >
+
+            <div class="service-card-content">
+
+                <small>01</small>
+
+                <h3>
+                    Behel Gigi
+                </h3>
+
+                <p>
+                    Perawatan ortodonti untuk membantu
+                    merapikan susunan gigi.
+                </p>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- 02 -->
+
+        <article class="service-card">
+
+            <img
+                src="images/3.jpg"
+                alt="Bleaching Gigi"
+            >
+
+            <div class="service-card-content">
+
+                <small>02</small>
+
+                <h3>
+                    Bleaching Gigi
+                </h3>
+
+                <p>
+                    Perawatan untuk membantu membuat
+                    warna gigi tampak lebih cerah.
+                </p>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- 03 -->
+
+        <article class="service-card">
+
+            <img
+                src="images/clinic-3.jpg"
+                alt="Gigi Tiruan"
+            >
+
+            <div class="service-card-content">
+
+                <small>03</small>
+
+                <h3>
+                    Gigi Tiruan
+                </h3>
+
+                <p>
+                    Membantu menggantikan gigi yang hilang
+                    agar fungsi mulut tetap nyaman.
+                </p>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- 04 -->
+
+        <article class="service-card">
+
+            <img
+                src="images/2.jpg"
+                alt="Gum Lifting"
+            >
+
+            <div class="service-card-content">
+
+                <small>04</small>
+
+                <h3>
+                    Gum Lifting
+                </h3>
+
+                <p>
+                    Perawatan gusi sesuai kondisi
+                    dan kebutuhan pasien.
+                </p>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- 05 -->
+
+        <article class="service-card">
+
+            <img
+                src="images/4.jpg"
+                alt="Implant Gigi"
+            >
+
+            <div class="service-card-content">
+
+                <small>05</small>
+
+                <h3>
+                    Implant Gigi
+                </h3>
+
+                <p>
+                    Pilihan perawatan untuk membantu
+                    menggantikan gigi yang hilang.
+                </p>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- 06 -->
+
+        <article class="service-card">
+
+            <img
+                src="images/6.jpg"
+                alt="Operasi Gigi Bungsu"
+            >
+
+            <div class="service-card-content">
+
+                <small>06</small>
+
+                <h3>
+                    Operasi Gigi Bungsu
+                </h3>
+
+                <p>
+                    Penanganan gigi bungsu sesuai
+                    kondisi dan kebutuhan pasien.
+                </p>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- 07 -->
+
+        <article class="service-card">
+
+            <img
+                src="images/7.jpg"
+                alt="Penambalan Gigi"
+            >
+
+            <div class="service-card-content">
+
+                <small>07</small>
+
+                <h3>
+                    Penambalan Gigi
+                </h3>
+
+                <p>
+                    Membantu memperbaiki gigi yang
+                    mengalami kerusakan.
+                </p>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- 08 -->
+
+        <article class="service-card">
+
+            <img
+                src="images/6.jpg"
+                alt="Perawatan Saraf Gigi"
+            >
+
+            <div class="service-card-content">
+
+                <small>08</small>
+
+                <h3>
+                    Perawatan Saraf Gigi
+                </h3>
+
+                <p>
+                    Perawatan bagian dalam gigi
+                    sesuai kondisi pasien.
+                </p>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- 09 -->
+
+        <article class="service-card">
+
+            <img
+                src="images/5.jpg"
+                alt="Rontgen Gigi"
+            >
+
+            <div class="service-card-content">
+
+                <small>09</small>
+
+                <h3>
+                    Rontgen Gigi
+                </h3>
+
+                <p>
+                    Pemeriksaan pencitraan untuk membantu
+                    melihat kondisi gigi.
+                </p>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- 10 -->
+
+        <article class="service-card">
+
+            <img
+                src="images/7.jpg"
+                alt="Scaling Gigi"
+            >
+
+            <div class="service-card-content">
+
+                <small>10</small>
+
+                <h3>
+                    Scaling Gigi
+                </h3>
+
+                <p>
+                    Membersihkan plak dan karang gigi
+                    secara profesional.
+                </p>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- 11 -->
+
+        <article class="service-card">
+
+            <img
+                src="images/3.jpg"
+                alt="Veneer Gigi"
+            >
+
+            <div class="service-card-content">
+
+                <small>11</small>
+
+                <h3>
+                    Veneer Gigi
+                </h3>
+
+                <p>
+                    Perawatan permukaan gigi untuk membantu
+                    tampilan senyum.
+                </p>
+
+            </div>
+
+        </article>
+
+
+    </div>
+
+
+
+    <!-- SEE ALL -->
+
+    <div class="see-all-services">
+
+        <a href="#all-services">
+            See All Services
+            <span>→</span>
+        </a>
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     WHY AUDRY DENTAL
+===================================================== -->
+
+<section class="why-section">
+
+    <div class="why-content">
+
+        <span class="gradient-label">
+            WHY AUDRY DENTAL?
+        </span>
+
+
+        <h2>
+            Kenapa harus
+            <span>Audry Dental?</span>
+        </h2>
+
+
+        <p>
+            Kami percaya bahwa perawatan gigi bukan hanya
+            tentang kesehatan, tetapi juga tentang kenyamanan
+            dan kepercayaan diri.
+        </p>
+
+
+        <p>
+            Audry Dental menghadirkan pelayanan yang ramah,
+            lingkungan yang nyaman, serta berbagai pilihan
+            perawatan dalam satu tempat.
+        </p>
+
+    </div>
+
+
+
+    <div class="why-grid">
+
+
+        <div class="why-card">
+
+            <strong>01</strong>
+
+            <h3>
+                Pelayanan Nyaman
+            </h3>
+
+            <p>
+                Suasana klinik bersih dan nyaman
+                untuk membantu pasien merasa tenang.
+            </p>
+
+        </div>
+
+
+
+        <div class="why-card">
+
+            <strong>02</strong>
+
+            <h3>
+                Dokter Profesional
+            </h3>
+
+            <p>
+                Perawatan dilakukan dengan pendekatan
+                profesional sesuai kebutuhan pasien.
+            </p>
+
+        </div>
+
+
+
+        <div class="why-card">
+
+            <strong>03</strong>
+
+            <h3>
+                Perawatan Lengkap
+            </h3>
+
+            <p>
+                Berbagai pilihan layanan dental
+                tersedia dalam satu tempat.
+            </p>
+
+        </div>
+
+
+
+        <div class="why-card">
+
+            <strong>04</strong>
+
+            <h3>
+                Pasien Prioritas
+            </h3>
+
+            <p>
+                Kami mengutamakan kenyamanan dan
+                pengalaman setiap pasien.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     ALL SERVICES
+===================================================== -->
+
+<section
+    class="all-services-section"
+    id="all-services"
+>
+
+
+    <div class="all-services-heading">
+
+        <span class="gradient-label">
+            ALL SERVICES
+        </span>
+
+
+        <h2>
+            Semua layanan,
+            <span>lebih mudah ditemukan.</span>
+        </h2>
+
+
+        <p>
+            Pilih perawatan yang sesuai dengan kebutuhanmu
+            dan temukan layanan Audry Dental.
+        </p>
+
+    </div>
+
+
+
+    <div class="all-services-list">
+
+
+        <a
+            href="#booking"
+            class="long-service-card"
+        >
+
+            <div>
+
+                <span>01</span>
+
+                <h3>
+                    Behel Gigi
+                </h3>
+
+                <p>
+                    Perawatan ortodonti untuk membantu
+                    merapikan susunan gigi.
+                </p>
+
+            </div>
+
+            
+        </a>
+
+
+
+        <a
+            href="#booking"
+            class="long-service-card"
+        >
+
+            <div>
+
+                <span>02</span>
+
+                <h3>
+                    Bleaching Gigi
+                </h3>
+
+                <p>
+                    Membantu membuat warna gigi
+                    tampak lebih cerah.
+                </p>
+
+            </div>
+
+            
+
+        </a>
+
+
+
+        <a
+            href="#booking"
+            class="long-service-card"
+        >
+
+            <div>
+
+                <span>03</span>
+
+                <h3>
+                    Gigi Tiruan
+                </h3>
+
+                <p>
+                    Solusi untuk membantu menggantikan
+                    gigi yang hilang.
+                </p>
+
+            </div>
+
+           
+
+        </a>
+
+
+
+        <a
+            href="#booking"
+            class="long-service-card"
+        >
+
+            <div>
+
+                <span>04</span>
+
+                <h3>
+                    Gum Lifting
+                </h3>
+
+                <p>
+                    Perawatan gusi sesuai kebutuhan pasien.
+                </p>
+
+            </div>
+
+            
+
+        </a>
+
+
+
+        <a
+            href="#booking"
+            class="long-service-card"
+        >
+
+            <div>
+
+                <span>05</span>
+
+                <h3>
+                    Implant Gigi
+                </h3>
+
+                <p>
+                    Pilihan perawatan untuk membantu
+                    menggantikan gigi yang hilang.
+                </p>
+
+            </div>
+
+            
+
+        </a>
+
+
+
+        <a
+            href="#booking"
+            class="long-service-card"
+        >
+
+            <div>
+
+                <span>06</span>
+
+                <h3>
+                    Operasi Gigi Bungsu
+                </h3>
+
+                <p>
+                    Penanganan gigi bungsu sesuai
+                    kondisi pasien.
+                </p>
+
+            </div>
+
+            
+
+        </a>
+
+
+
+        <a
+            href="#booking"
+            class="long-service-card"
+        >
+
+            <div>
+
+                <span>07</span>
+
+                <h3>
+                    Penambalan Gigi
+                </h3>
+
+                <p>
+                    Membantu memperbaiki gigi yang rusak.
+                </p>
+
+            </div>
+
+            
+
+        </a>
+
+
+
+        <a
+            href="#booking"
+            class="long-service-card"
+        >
+
+            <div>
+
+                <span>08</span>
+
+                <h3>
+                    Perawatan Saraf Gigi
+                </h3>
+
+                <p>
+                    Perawatan bagian dalam gigi sesuai
+                    kondisi pasien.
+                </p>
+
+            </div>
+
+           
+        </a>
+
+
+
+        <a
+            href="#booking"
+            class="long-service-card"
+        >
+
+            <div>
+
+                <span>09</span>
+
+                <h3>
+                    Rontgen Gigi
+                </h3>
+
+                <p>
+                    Pemeriksaan pencitraan untuk membantu
+                    melihat kondisi gigi.
+                </p>
+
+            </div>
+
+           
+
+        </a>
+
+
+
+        <a
+            href="#booking"
+            class="long-service-card"
+        >
+
+            <div>
+
+                <span>10</span>
+
+                <h3>
+                    Scaling Gigi
+                </h3>
+
+                <p>
+                    Pembersihan plak dan karang gigi
+                    secara profesional.
+                </p>
+
+            </div>
+
+            
+
+        </a>
+
+
+
+        <a
+            href="#booking"
+            class="long-service-card"
+        >
+
+            <div>
+
+                <span>11</span>
+
+                <h3>
+                    Veneer Gigi
+                </h3>
+
+                <p>
+                    Perawatan permukaan gigi untuk membantu
+                    tampilan senyum.
+                </p>
+
+            </div>
+
+            
+
+        </a>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CLINIC
+===================================================== -->
+
+<section
+    class="section blue-section"
+    id="clinic"
+>
+
+
+    <div class="section-heading">
+
+        <div>
+
+            <p class="eyebrow">
+                OUR CLINIC
+            </p>
+
+            <h2>
+                Ruang nyaman untuk perawatanmu.
+            </h2>
+
+        </div>
+
+
+        <p>
+            Lingkungan klinik yang bersih, nyaman,
+            dan didukung fasilitas perawatan modern.
+        </p>
+
+    </div>
+
+
+
+    <div class="gallery">
+
+        <img
+            src="images/clinic-5.jpg"
+            alt="Ruang klinik"
+        >
+
+        <img
+            src="images/clinic-6.jpg"
+            alt="Fasilitas klinik"
+        >
+
+        <img
+            src="images/clinic-7.jpg"
+            alt="Ruang Audry Dental"
+        >
+
+        <img
+            src="images/clinic-8.jpg"
+            alt="Interior klinik"
+        >
+
+         <img
+            src="images/clinic-4.jpg"
+            alt="Interior klinik"
+        >
+
+         
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     DOCTOR
+===================================================== -->
+
+<section
+    class="doctor-section"
+    id="doctor"
+>
+
+
+    <div class="doctor-image">
+
+        <img
+            src="images/clinic-9.jpg"
+            alt="Dokter Audry Dental"
+        >
+
+    </div>
+
+
+    <div class="doctor-content">
+
+        <p class="eyebrow">
+            OUR DENTIST
+        </p>
+
+
+        <h2>
+            drg. Dental Care
+        </h2>
+
+
+        <p>
+            Dokter gigi profesional yang siap membantu
+            memberikan perawatan sesuai kebutuhanmu
+            dengan pelayanan yang nyaman dan ramah.
+        </p>
+
+
+        <a
+            href="Appointment.html"
+            class="btn-primary"
+        >
+            Buat Appointment 
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FACILITIES
+===================================================== -->
+
+<section class="section blue-section">
+
+
+    <div class="section-heading">
+
+        <div>
+
+            <p class="eyebrow">
+                FACILITIES
+            </p>
+
+            <h2>
+                Fasilitas yang mendukung kenyamanan.
+            </h2>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="facility-grid">
+
+
+        <article class="facility-card">
+
+            <img
+                src="images/clinic-5.jpg"
+                alt="Ruang Perawatan"
+            >
+
+            <div>
+
+                <h3>
+                    Ruang Perawatan
+                </h3>
+
+                <p>
+                    Ruang perawatan nyaman dan bersih.
+                </p>
+
+            </div>
+
+        </article>
+
+
+
+        <article class="facility-card">
+
+            <img
+                src="images/clinic-6.jpg"
+                alt="Peralatan Modern"
+            >
+
+            <div>
+
+                <h3>
+                    Peralatan Modern
+                </h3>
+
+                <p>
+                    Peralatan pendukung pelayanan dental.
+                </p>
+
+            </div>
+
+        </article>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     REVIEWS
+===================================================== -->
+
+<section class="section reviews-section">
+
+
+    <div class="reviews-heading">
+
+        <span class="gradient-label">
+            PATIENT STORIES
+        </span>
+
+
+        <h2>
+            Apa kata pasien
+            <span>Audry Dental?</span>
+        </h2>
+
+
+        <p>
+            Pengalaman pasien menjadi bagian penting
+            dari pelayanan kami.
+        </p>
+
+    </div>
+
+
+
+    <div class="review-slider">
+
+
+        <!-- REVIEW 01 -->
+
+        <article class="review-card">
+
+            <div class="review-top">
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <span>5.0</span>
+
+            </div>
+
+            <p>
+                Pelayanannya ramah, tempatnya bersih,
+                dan saya merasa nyaman selama melakukan
+                perawatan.
+            </p>
+
+            <strong>
+                Chacha
+            </strong>
+
+            <small>
+                Pasien Audry Dental
+            </small>
+
+        </article>
+
+
+
+        <!-- REVIEW 02 -->
+
+        <article class="review-card">
+
+            <div class="review-top">
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <span>5.0</span>
+
+            </div>
+
+            <p>
+                Dokternya menjelaskan perawatan dengan
+                jelas sehingga saya lebih mengerti dan
+                merasa tenang.
+            </p>
+
+            <strong>
+                Dewinta
+            </strong>
+
+            <small>
+                Pasien Audry Dental
+            </small>
+
+        </article>
+
+
+
+        <!-- REVIEW 03 -->
+
+        <article class="review-card">
+
+            <div class="review-top">
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <span>4.9</span>
+
+            </div>
+
+            <p>
+                Kliniknya nyaman dan pelayanannya
+                sangat baik. Proses booking juga mudah.
+            </p>
+
+            <strong>
+                Fira
+            </strong>
+
+            <small>
+                Pasien Audry Dental
+            </small>
+
+        </article>
+
+
+
+        <!-- REVIEW 04 -->
+
+        <article class="review-card">
+
+            <div class="review-top">
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <span>5.0</span>
+
+            </div>
+
+            <p>
+                Saya suka suasana kliniknya. Bersih,
+                modern, dan pelayanannya terasa ramah.
+            </p>
+
+            <strong>
+                Nadia
+            </strong>
+
+            <small>
+                Pasien Audry Dental
+            </small>
+
+        </article>
+
+
+
+        <!-- REVIEW 05 -->
+
+        <article class="review-card">
+
+            <div class="review-top">
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <span>4.9</span>
+
+            </div>
+
+            <p>
+                Informasi perawatannya mudah dipahami
+                dan dokter memberikan penjelasan dengan baik.
+            </p>
+
+            <strong>
+                Rani
+            </strong>
+
+            <small>
+                Pasien Audry Dental
+            </small>
+
+        </article>
+
+
+
+        <!-- REVIEW 06 -->
+
+        <article class="review-card">
+
+            <div class="review-top">
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <span>5.0</span>
+
+            </div>
+
+            <p>
+                Pengalaman perawatan di sini sangat
+                menyenangkan. Saya akan kembali lagi.
+            </p>
+
+            <strong>
+                Alya
+            </strong>
+
+            <small>
+                Pasien Audry Dental
+            </small>
+
+        </article>
+
+
+
+        <!-- REVIEW 07 -->
+
+        <article class="review-card">
+
+            <div class="review-top">
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <span>4.9</span>
+
+            </div>
+
+            <p>
+                Tempatnya nyaman dan stafnya sangat
+                membantu dari awal sampai selesai.
+            </p>
+
+            <strong>
+                Putri
+            </strong>
+
+            <small>
+                Pasien Audry Dental
+            </small>
+
+        </article>
+
+
+
+        <!-- REVIEW 08 -->
+
+        <article class="review-card">
+
+            <div class="review-top">
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <span>5.0</span>
+
+            </div>
+
+            <p>
+                Saya merasa lebih percaya diri setelah
+                mendapatkan perawatan di Audry Dental.
+            </p>
+
+            <strong>
+                Sarah
+            </strong>
+
+            <small>
+                Pasien Audry Dental
+            </small>
+
+        </article>
+
+
+
+        <!-- REVIEW 09 -->
+
+        <article class="review-card">
+
+            <div class="review-top">
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <span>5.0</span>
+
+            </div>
+
+            <p>
+                Pelayanan cepat, ramah, dan informasinya
+                jelas. Sangat membantu.
+            </p>
+
+            <strong>
+                Intan
+            </strong>
+
+            <small>
+                Pasien Audry Dental
+            </small>
+
+        </article>
+
+
+
+        <!-- REVIEW 10 -->
+
+        <article class="review-card">
+
+            <div class="review-top">
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <span>4.9</span>
+
+            </div>
+
+            <p>
+                Saya puas dengan pelayanan dan
+                kenyamanan kliniknya.
+            </p>
+
+            <strong>
+                Maya
+            </strong>
+
+            <small>
+                Pasien Audry Dental
+            </small>
+
+        </article>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PROMO
+===================================================== -->
+
+<section
+    class="promo-section"
+    id="promo"
+>
+
+
+    <div class="promo-box">
+
+
+        <div class="promo-text">
+
+            <span class="gradient-label">
+                SPECIAL PROMO
+            </span>
+
+
+            <h2>
+                Senyum lebih sehat,
+                <span>lebih percaya diri.</span>
+            </h2>
+
+
+            <p>
+                Nikmati penawaran spesial dari Audry Dental
+                untuk pilihan perawatan tertentu.
+            </p>
+
+
+            <a
+                href="Appointment.html"
+                class="btn-light"
+            >
+                Booking Sekarang →
+            </a>
+
+        </div>
+
+
+
+        <div class="promo-image">
+
+            <img
+                src="images/clinic-1.jpg"
+                alt="Promo Audry Dental"
+            >
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     BOOKING
+===================================================== -->
+
+<section
+    class="section booking-section"
+    id="booking"
+>
+
+
+    <div class="booking-info">
+
+        <p class="eyebrow">
+            APPOINTMENT
+        </p>
+
+
+        <h2>
+            Jadwalkan kunjunganmu.
+        </h2>
+
+
+        <p>
+            Isi data berikut untuk membuat janji
+            perawatan di Audry Dental.
+        </p>
+
+    </div>
+
+
+
+    <form
+        class="booking-form"
+        onsubmit="book(event)"
+    >
+
+
+        <input
+            id="nama"
+            type="text"
+            placeholder="Nama lengkap"
+            required
+        >
+
+
+        <input
+            id="hp"
+            type="tel"
+            placeholder="Nomor WhatsApp"
+            required
+        >
+
+
+        <select
+            id="layanan"
+            required
+        >
+
+            <option value="">
+                Pilih layanan
+            </option>
+
+            <option>
+                Behel Gigi
+            </option>
+
+            <option>
+                Bleaching Gigi
+            </option>
+
+            <option>
+                Gigi Tiruan
+            </option>
+
+            <option>
+                Gum Lifting
+            </option>
+
+            <option>
+                Implant Gigi
+            </option>
+
+            <option>
+                Operasi Gigi Bungsu
+            </option>
+
+            <option>
+                Penambalan Gigi
+            </option>
+
+            <option>
+                Perawatan Saraf Gigi
+            </option>
+
+            <option>
+                Rontgen Gigi
+            </option>
+
+            <option>
+                Scaling Gigi
+            </option>
+
+            <option>
+                Veneer Gigi
+            </option>
+
+        </select>
+
+
+        <input
+            type="date"
+            required
+        >
+
+
+        <button
+            type="submit"
+            class="btn-primary full"
+        >
+            Booking Appointment
+        </button>
+
+
+    </form>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="footer">
+
+
+    <div class="logo">
+
+        Audry
+
+        <span>
+            DENTAL
+        </span>
+
+    </div>
+
+
+    <p>
+        Perawatan gigi dengan pelayanan yang nyaman,
+        modern, dan terpercaya.
+    </p>
+
+
+    <div class="footer-bottom">
+        © 2026 Audry Dental.
+    </div>
+
+
+</footer>
+
+
+
+<!-- =====================================================
+     TOAST
+===================================================== -->
+
+<div
+    class="toast"
+    id="toast"
+></div>
+
+
+
+<!-- =====================================================
+     MOBILE BOTTOM NAV
+===================================================== -->
+
+<nav class="bottom-nav">
+
+
+    <a href="#home">
+
+        <b>⌂</b>
+
+        Home
+
+    </a>
+
+
+    <a href="#services">
+
+        <b>♢</b>
+
+        Layanan
+
+    </a>
+
+
+    <a
+        href="Appointment.html"
+        class="active"
+    >
+
+        <b>▦</b>
+
+        Booking
+
+    </a>
+
+
+    <a href="#promo">
+
+        <b>◇</b>
+
+        Promo
+
+    </a>
+
+
+</nav>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script src="js/script.js"></script>
+
+
+</body>
+</html>

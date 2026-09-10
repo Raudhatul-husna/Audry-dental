@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Appointment | Audry Dental</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: #f4f7fb;
+            color: #252b64;
+        }
+
+        /* HEADER */
+        .header {
+            height: 76px;
+            padding: 0 7%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: white;
+            border-bottom: 1px solid #e8ebf1;
+            position: sticky;
+            top: 0;
+            z-index: 20;
+        }
+
+        .logo {
+            color: #252b64;
+            font: italic 27px 'Playfair Display';
+        }
+
+        .logo span {
+            display: block;
+            text-align: center;
+            margin-top: 3px;
+            font-size: 8px;
+            letter-spacing: 4px;
+            font-family: 'DM Sans';
+        }
+
+        .back-btn {
+            text-decoration: none;
+            color: #2853a4;
+            font-weight: 600;
+            font-size: 13px;
+        }
+
+        /* MAIN */
+        .appointment-page {
+            min-height: calc(100vh - 76px);
+            padding: 65px 20px 90px;
+        }
+
+        .container {
+            max-width: 1050px;
+            margin: auto;
+        }
+
+        .heading {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .eyebrow {
+            color: #2853a4;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            margin-bottom: 12px;
+        }
+
+        .heading h1 {
+            font-family: 'Playfair Display';
+            font-size: clamp(38px, 6vw, 60px);
+            line-height: 1.1;
+            margin-bottom: 15px;
+        }
+
+        .heading p {
+            max-width: 600px;
+            margin: auto;
+            color: #737991;
+            line-height: 1.7;
+            font-size: 14px;
+        }
+
+        /* FORM CARD */
+        .appointment-card {
+            display: grid;
+            grid-template-columns: .85fr 1.15fr;
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 15px 45px rgba(37,43,100,.09);
+        }
+
+        .appointment-info {
+            padding: 45px;
+            background: linear-gradient(145deg, #252b64, #2853a4);
+            color: white;
+        }
+
+        .appointment-info h2 {
+            font-family: 'Playfair Display';
+            font-size: 38px;
+            margin-bottom: 18px;
+        }
+
+        .appointment-info > p {
+            color: #e3e9ff;
+            font-size: 13px;
+            line-height: 1.8;
+            margin-bottom: 35px;
+        }
+
+        .info-item {
+            display: flex;
+            gap: 14px;
+            margin-bottom: 23px;
+        }
+
+        .info-icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 11px;
+            background: rgba(255,255,255,.13);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .info-item strong {
+            display: block;
+            font-size: 13px;
+            margin-bottom: 4px;
+        }
+
+        .info-item span {
+            color: #dbe4ff;
+            font-size: 11px;
+        }
+
+        /* FORM */
+        .form-area {
+            padding: 45px;
+        }
+
+        .form-area h2 {
+            font-size: 24px;
+            margin-bottom: 25px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 17px;
+        }
+
+        .field {
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+        }
+
+        .field.full {
+            grid-column: 1 / -1;
+        }
+
+        .field label {
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .field input,
+        .field select,
+        .field textarea {
+            width: 100%;
+            padding: 14px 15px;
+            border: 1px solid #d8deea;
+            border-radius: 12px;
+            background: #fbfcfe;
+            outline: none;
+            font-family: inherit;
+            color: #252b64;
+            transition: .2s;
+        }
+
+        .field textarea {
+            min-height: 90px;
+            resize: vertical;
+        }
+
+        .field input:focus,
+        .field select:focus,
+        .field textarea:focus {
+            border-color: #2853a4;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(40,83,164,.08);
+        }
+
+        .submit-btn {
+            grid-column: 1 / -1;
+            border: 0;
+            border-radius: 13px;
+            padding: 16px;
+            background: #2853a4;
+            color: white;
+            font-family: inherit;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 5px;
+            transition: .2s;
+        }
+
+        .submit-btn:hover {
+            background: #1f4389;
+            transform: translateY(-2px);
+        }
+
+        /* MODAL */
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(20,25,60,.58);
+            z-index: 100;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .modal-box {
+            width: min(560px, 100%);
+            margin: 50px auto;
+            background: white;
+            border-radius: 24px;
+            padding: 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,.2);
+        }
+
+        .modal-box h2 {
+            font-family: 'Playfair Display';
+            font-size: 30px;
+            margin-bottom: 8px;
+        }
+
+        .modal-subtitle {
+            color: #777e96;
+            font-size: 12px;
+            margin-bottom: 25px;
+        }
+
+        .data-list {
+            background: #f6f8fc;
+            border-radius: 15px;
+            padding: 18px;
+            margin-bottom: 22px;
+        }
+
+        .data-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            padding: 10px 0;
+            border-bottom: 1px solid #e4e8f0;
+            font-size: 12px;
+        }
+
+        .data-row:last-child {
+            border-bottom: 0;
+        }
+
+        .data-row span {
+            color: #777e96;
+        }
+
+        .data-row strong {
+            text-align: right;
+        }
+
+        .modal-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .modal-buttons button {
+            padding: 14px;
+            border-radius: 12px;
+            border: 0;
+            cursor: pointer;
+            font-family: inherit;
+            font-weight: 700;
+        }
+
+        .edit-btn {
+            background: #edf1f8;
+            color: #252b64;
+        }
+
+        .save-btn {
+            background: #2853a4;
+            color: white;
+        }
+
+        /* PAYMENT */
+        .payment-box {
+            display: none;
+        }
+
+        .payment-options {
+            display: grid;
+            gap: 12px;
+            margin: 20px 0;
+        }
+
+        .payment-option {
+            border: 1px solid #dce2ed;
+            border-radius: 14px;
+            padding: 15px;
+            cursor: pointer;
+            transition: .2s;
+        }
+
+        .payment-option:hover {
+            border-color: #2853a4;
+            background: #f6f9ff;
+        }
+
+        .payment-option strong {
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .payment-option span {
+            font-size: 11px;
+            color: #777e96;
+        }
+
+        .whatsapp-btn {
+            width: 100%;
+            border: 0;
+            border-radius: 13px;
+            padding: 15px;
+            background: #2853a4;
+            color: white;
+            font-weight: 700;
+            cursor: pointer;
+            font-family: inherit;
+        }
+
+        .cancel-btn {
+            width: 100%;
+            border: 0;
+            background: #eef1f6;
+            color: #252b64;
+            padding: 13px;
+            border-radius: 12px;
+            margin-top: 10px;
+            cursor: pointer;
+            font-family: inherit;
+            font-weight: 600;
+        }
+
+        /* SUCCESS */
+        .success-box {
+            display: none;
+            text-align: center;
+        }
+
+        .success-icon {
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            margin: 0 auto 18px;
+            background: #eaf1ff;
+            color: #2853a4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+        }
+
+        .success-box h2 {
+            margin-bottom: 12px;
+        }
+
+        .success-box p {
+            color: #70778f;
+            font-size: 13px;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        /* RESPONSIVE */
+        @media(max-width: 800px) {
+            .appointment-card {
+                grid-template-columns: 1fr;
+            }
+
+            .appointment-info {
+                padding: 30px;
+            }
+
+            .form-area {
+                padding: 30px;
+            }
+        }
+
+        @media(max-width: 550px) {
+            .header {
+                padding: 0 20px;
+                height: 66px;
+            }
+
+            .appointment-page {
+                padding: 45px 15px 70px;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .field.full {
+                grid-column: auto;
+            }
+
+            .submit-btn {
+                grid-column: auto;
+            }
+
+            .modal-buttons {
+                grid-template-columns: 1fr;
+            }
+
+            .modal-box {
+                margin: 20px auto;
+                padding: 23px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="header">
+    <div class="logo">
+        Audry
+        <span>DENTAL</span>
+    </div>
+
+    <a href="index.html" class="back-btn">
+        ← Kembali ke Website
+    </a>
+</header>
+
+
+<main class="appointment-page">
+
+    <div class="container">
+
+        <div class="heading">
+            <div class="eyebrow">APPOINTMENT</div>
+
+            <h1>Jadwalkan kunjunganmu.</h1>
+
+            <p>
+                Isi data appointment dengan lengkap.
+                Setelah itu kamu dapat mengecek kembali
+                data sebelum mengirimkan permintaan kepada admin.
+            </p>
+        </div>
+
+
+        <div class="appointment-card">
+
+            <!-- INFO -->
+            <div class="appointment-info">
+
+                <h2>Let's take care of your smile.</h2>
+
+                <p>
+                    Pilih layanan yang kamu butuhkan dan tentukan
+                    waktu kunjungan yang sesuai.
+                </p>
+
+                <div class="info-item">
+                    <div class="info-icon">✓</div>
+                    <div>
+                        <strong>Booking Mudah</strong>
+                        <span>Isi data appointment dalam beberapa langkah.</span>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon">✓</div>
+                    <div>
+                        <strong>Cek Data</strong>
+                        <span>Periksa kembali data sebelum dikirim.</span>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon">✓</div>
+                    <div>
+                        <strong>Konfirmasi Admin</strong>
+                        <span>Admin akan membantu proses appointment.</span>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- FORM -->
+            <div class="form-area">
+
+                <h2>Data Appointment</h2>
+
+                <form id="appointmentForm">
+
+                    <div class="form-grid">
+
+                        <div class="field">
+                            <label>Nama Lengkap</label>
+                            <input
+                                type="text"
+                                id="nama"
+                                placeholder="Masukkan nama lengkap"
+                                required
+                            >
+                        </div>
+
+                        <div class="field">
+                            <label>Nomor WhatsApp</label>
+                            <input
+                                type="tel"
+                                id="hp"
+                                placeholder="08xxxxxxxxxx"
+                                required
+                            >
+                        </div>
+
+                        <div class="field">
+                            <label>Email</label>
+                            <input
+                                type="email"
+                                id="email"
+                                placeholder="nama@email.com"
+                            >
+                        </div>
+
+                        <div class="field">
+                            <label>Layanan</label>
+
+                            <select id="layanan" required>
+                                <option value="">Pilih layanan</option>
+                                <option>Behel Gigi</option>
+                                <option>Bleaching Gigi</option>
+                                <option>Gigi Tiruan</option>
+                                <option>Gum Lifting</option>
+                                <option>Implant Gigi</option>
+                                <option>Operasi Gigi Bungsu</option>
+                                <option>Penambalan Gigi</option>
+                                <option>Perawatan Saraf Gigi</option>
+                                <option>Rontgen Gigi</option>
+                                <option>Scaling Gigi</option>
+                                <option>Veneer Gigi</option>
+                            </select>
+                        </div>
+
+                        <div class="field">
+                            <label>Pilih Dokter</label>
+
+                            <select id="dokter" required>
+                                <option value="">Pilih dokter</option>
+                                <option>drg. Dental Care</option>
+                            </select>
+                        </div>
+
+                        <div class="field">
+                            <label>Tanggal</label>
+                            <input type="date" id="tanggal" required>
+                        </div>
+
+                        <div class="field">
+                            <label>Jam</label>
+
+                            <select id="jam" required>
+                                <option value="">Pilih jam</option>
+                                <option>09:00</option>
+                                <option>10:00</option>
+                                <option>11:00</option>
+                                <option>13:00</option>
+                                <option>14:00</option>
+                                <option>15:00</option>
+                                <option>16:00</option>
+                            </select>
+                        </div>
+
+                        <div class="field">
+                            <label>Keluhan</label>
+
+                            <textarea
+                                id="keluhan"
+                                placeholder="Contoh: ingin scaling, sakit gigi, konsultasi..."
+                            ></textarea>
+                        </div>
+
+                        <button
+                            type="submit"
+                            class="submit-btn"
+                        >
+                            Konfirmasi Appointment →
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+<!-- MODAL CEK DATA -->
+
+<div class="modal" id="reviewModal">
+
+    <div class="modal-box">
+
+        <div id="reviewBox">
+
+            <h2>Cek kembali data</h2>
+
+            <p class="modal-subtitle">
+                Pastikan semua informasi sudah benar sebelum disimpan.
+            </p>
+
+            <div class="data-list">
+
+                <div class="data-row">
+                    <span>Nama</span>
+                    <strong id="reviewNama"></strong>
+                </div>
+
+                <div class="data-row">
+                    <span>WhatsApp</span>
+                    <strong id="reviewHp"></strong>
+                </div>
+
+                <div class="data-row">
+                    <span>Email</span>
+                    <strong id="reviewEmail"></strong>
+                </div>
+
+                <div class="data-row">
+                    <span>Layanan</span>
+                    <strong id="reviewLayanan"></strong>
+                </div>
+
+                <div class="data-row">
+                    <span>Dokter</span>
+                    <strong id="reviewDokter"></strong>
+                </div>
+
+                <div class="data-row">
+                    <span>Tanggal</span>
+                    <strong id="reviewTanggal"></strong>
+                </div>
+
+                <div class="data-row">
+                    <span>Jam</span>
+                    <strong id="reviewJam"></strong>
+                </div>
+
+                <div class="data-row">
+                    <span>Keluhan</span>
+                    <strong id="reviewKeluhan"></strong>
+                </div>
+
+            </div>
+
+            <div class="modal-buttons">
+
+                <button
+                    class="edit-btn"
+                    onclick="editData()"
+                >
+                    ← Edit Data
+                </button>
+
+                <button
+                    class="save-btn"
+                    onclick="saveData()"
+                >
+                    Simpan & Lanjut →
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- PAYMENT -->
+
+        <div class="payment-box" id="paymentBox">
+
+            <h2>Appointment tersimpan ✓</h2>
+
+            <p class="modal-subtitle">
+                Pilih cara untuk menghubungi admin mengenai appointment kamu.
+            </p>
+
+            <div class="payment-options">
+
+                <div
+                    class="payment-option"
+                    onclick="sendWhatsApp('Konfirmasi Appointment')"
+                >
+                    <strong>💬 WhatsApp Admin</strong>
+                    <span>
+                        Kirim detail appointment langsung ke WhatsApp admin.
+                    </span>
+                </div>
+
+                <div
+                    class="payment-option"
+                    onclick="sendWhatsApp('Informasi Pembayaran')"
+                >
+                    <strong>💳 Tanya Pembayaran</strong>
+                    <span>
+                        Hubungi admin untuk mendapatkan informasi pembayaran.
+                    </span>
+                </div>
+
+            </div>
+
+            <button
+                class="whatsapp-btn"
+                onclick="sendWhatsApp('Konfirmasi Appointment')"
+            >
+                Kirim ke WhatsApp Admin
+            </button>
+
+            <button
+                class="cancel-btn"
+                onclick="closeModal()"
+            >
+                Tutup
+            </button>
+
+        </div>
+
+
+        <!-- SUCCESS -->
+
+        <div class="success-box" id="successBox">
+
+            <div class="success-icon">✓</div>
+
+            <h2>Menunggu konfirmasi admin</h2>
+
+            <p>
+                Data appointment kamu sudah disimpan.
+                Silakan kirim detailnya melalui WhatsApp agar
+                admin Audry Dental dapat membantu proses selanjutnya.
+            </p>
+
+            <button
+                class="whatsapp-btn"
+                onclick="sendWhatsApp('Konfirmasi Appointment')"
+            >
+                💬 Kirim ke WhatsApp
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+    // NOMOR WHATSAPP ADMIN
+    const nomorAdmin = "6285361972670";
+
+    const form = document.getElementById("appointmentForm");
+    const modal = document.getElementById("reviewModal");
+
+    form.addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        // Ambil data
+        const data = {
+            nama: document.getElementById("nama").value,
+            hp: document.getElementById("hp").value,
+            email: document.getElementById("email").value || "-",
+            layanan: document.getElementById("layanan").value,
+            dokter: document.getElementById("dokter").value,
+            tanggal: document.getElementById("tanggal").value,
+            jam: document.getElementById("jam").value,
+            keluhan: document.getElementById("keluhan").value || "-"
+        };
+
+        // Tampilkan data untuk dicek
+        document.getElementById("reviewNama").textContent = data.nama;
+        document.getElementById("reviewHp").textContent = data.hp;
+        document.getElementById("reviewEmail").textContent = data.email;
+        document.getElementById("reviewLayanan").textContent = data.layanan;
+        document.getElementById("reviewDokter").textContent = data.dokter;
+        document.getElementById("reviewTanggal").textContent = formatTanggal(data.tanggal);
+        document.getElementById("reviewJam").textContent = data.jam;
+        document.getElementById("reviewKeluhan").textContent = data.keluhan;
+
+        modal.style.display = "block";
+
+    });
+
+
+    function editData() {
+
+        modal.style.display = "none";
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+    }
+
+
+    function saveData() {
+
+        const data = {
+            nama: document.getElementById("nama").value,
+            hp: document.getElementById("hp").value,
+            email: document.getElementById("email").value || "-",
+            layanan: document.getElementById("layanan").value,
+            dokter: document.getElementById("dokter").value,
+            tanggal: document.getElementById("tanggal").value,
+            jam: document.getElementById("jam").value,
+            keluhan: document.getElementById("keluhan").value || "-"
+        };
+
+        // Simpan sementara di browser
+        localStorage.setItem(
+            "audryDentalAppointment",
+            JSON.stringify(data)
+        );
+
+        // Tampilkan halaman pembayaran/kontak admin
+        document.getElementById("reviewBox").style.display = "none";
+        document.getElementById("paymentBox").style.display = "block";
+
+    }
+
+
+    function sendWhatsApp(jenis) {
+
+        const data = JSON.parse(
+            localStorage.getItem("audryDentalAppointment")
+        );
+
+        if (!data) {
+            alert("Data appointment belum tersedia.");
+            return;
+        }
+
+        const pesan =
+`Halo Admin Audry Dental 👋
+
+Saya ingin ${jenis}.
+
+DATA APPOINTMENT
+------------------------
+Nama: ${data.nama}
+No. WhatsApp: ${data.hp}
+Email: ${data.email}
+Layanan: ${data.layanan}
+Dokter: ${data.dokter}
+Tanggal: ${formatTanggal(data.tanggal)}
+Jam: ${data.jam}
+Keluhan: ${data.keluhan}
+
+Mohon informasi dan konfirmasi untuk appointment saya.
+
+Terima kasih.`;
+
+        const url =
+            "https://wa.me/" +
+            nomorAdmin +
+            "?text=" +
+            encodeURIComponent(pesan);
+
+        window.open(url, "_blank");
+
+        document.getElementById("paymentBox").style.display = "none";
+        document.getElementById("successBox").style.display = "block";
+
+    }
+
+
+    function closeModal() {
+
+        modal.style.display = "none";
+
+    }
+
+
+    function formatTanggal(tanggal) {
+
+        if (!tanggal) return "-";
+
+        const date = new Date(tanggal + "T00:00:00");
+
+        return date.toLocaleDateString(
+            "id-ID",
+            {
+                day: "2-digit",
+                month: "long",
+                year: "numeric"
+            }
+        );
+
+    }
+
+
+    // Tanggal minimal = hari ini
+    const today = new Date();
+
+    const yyyy = today.getFullYear();
+    const mm = String(today.getMonth() + 1).padStart(2, "0");
+    const dd = String(today.getDate()).padStart(2, "0");
+
+    document.getElementById("tanggal").min =
+        `${yyyy}-${mm}-${dd}`;
+
+
+    // Tutup modal jika klik area luar
+    modal.addEventListener("click", function(event) {
+
+        if (event.target === modal) {
+            closeModal();
+        }
+
+    });
+
+</script>
+
+</body>
+</html>
