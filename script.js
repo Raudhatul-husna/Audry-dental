@@ -1,173 +1,343 @@
-/* =========================
+/* =====================================================
+   AUDRY DENTAL — JAVASCRIPT
+===================================================== */
+
+
+/* =====================================================
    ELEMENTS
-========================= */
+===================================================== */
 
-const mobileMenu = document.getElementById('mobileMenu');
-const searchBox = document.getElementById('searchBox');
-const searchInput = document.getElementById('searchInput');
-const searchResult = document.getElementById('searchResult');
-const toastBox = document.getElementById('toast');
+const mobileMenu = document.getElementById("mobileMenu");
+const searchBox = document.getElementById("searchBox");
+const searchInput = document.getElementById("searchInput");
+const searchResult = document.getElementById("searchResult");
+const toastBox = document.getElementById("toast");
 
 
-/* =========================
-   MOBILE MENU
-========================= */
+/* =====================================================
+   MOBILE MENU — GARIS TIGA
+===================================================== */
 
 function openMenu() {
-    mobileMenu.style.display = 'block';
+
+    if (!mobileMenu) return;
+
+    mobileMenu.style.display = "block";
+
+    document.body.style.overflow = "hidden";
 }
+
 
 function closeMenu() {
-    mobileMenu.style.display = 'none';
+
+    if (!mobileMenu) return;
+
+    mobileMenu.style.display = "none";
+
+    document.body.style.overflow = "";
 }
 
 
-/* =========================
-   SEARCH
-========================= */
+/* =====================================================
+   SEARCH — TOMBOL CARI
+===================================================== */
 
 function openSearch() {
-    searchBox.style.display = 'block';
 
-    setTimeout(() => {
-        searchInput.focus();
-    }, 100);
+    if (!searchBox) return;
+
+    searchBox.style.display = "block";
+
+    document.body.style.overflow = "hidden";
+
+    setTimeout(function () {
+
+        if (searchInput) {
+            searchInput.focus();
+        }
+
+    }, 150);
 }
+
 
 function closeSearch() {
-    searchBox.style.display = 'none';
 
-    searchInput.value = '';
+    if (!searchBox) return;
 
-    searchResult.innerHTML =
-        'Ketik nama layanan yang ingin dicari.';
+    searchBox.style.display = "none";
+
+    document.body.style.overflow = "";
+
+    if (searchInput) {
+        searchInput.value = "";
+    }
+
+    if (searchResult) {
+
+        searchResult.innerHTML =
+            "Ketik nama layanan yang ingin dicari.";
+
+    }
 }
 
+
+/* =====================================================
+   SEARCH SERVICES
+===================================================== */
 
 function findService() {
 
+    if (!searchInput || !searchResult) return;
+
+
     const services = [
-        'Behel Gigi',
-        'Bleaching Gigi',
-        'Scaling',
-        'Tambal Gigi'
+
+        "Behel Gigi",
+        "Bleaching Gigi",
+        "Gigi Tiruan",
+        "Gum Lifting",
+        "Implant Gigi",
+        "Operasi Gigi Bungsu",
+        "Penambalan Gigi",
+        "Perawatan Saraf Gigi",
+        "Rontgen Gigi",
+        "Scaling Gigi",
+        "Veneer Gigi"
+
     ];
+
 
     const query =
         searchInput.value
-            .toLowerCase()
-            .trim();
+        .toLowerCase()
+        .trim();
+
 
     if (!query) {
 
         searchResult.innerHTML =
-            'Ketik nama layanan yang ingin dicari.';
+            "Ketik nama layanan yang ingin dicari.";
 
         return;
     }
 
+
     const results =
-        services.filter(service =>
-            service
+        services.filter(function(service) {
+
+            return service
                 .toLowerCase()
-                .includes(query)
-        );
+                .includes(query);
+
+        });
+
 
     if (results.length > 0) {
 
         searchResult.innerHTML =
-            'Ditemukan: <b>' +
-            results.join(', ') +
-            '</b>';
+            "Ditemukan: <b>" +
+            results.join(", ") +
+            "</b>";
 
     } else {
 
         searchResult.innerHTML =
-            'Layanan tidak ditemukan.';
+            "Layanan tidak ditemukan.";
 
     }
 }
 
 
-/* =========================
+/* =====================================================
    TOAST
-========================= */
+===================================================== */
 
 function showToast(message) {
 
+    if (!toastBox) return;
+
+
     toastBox.textContent = message;
 
-    toastBox.style.display = 'block';
+    toastBox.style.display = "block";
 
-    setTimeout(() => {
 
-        toastBox.style.display = 'none';
+    setTimeout(function() {
 
-    }, 2000);
+        toastBox.style.display = "none";
+
+    }, 2500);
 }
 
 
-/* =========================
+/* =====================================================
    BOOKING
-========================= */
+===================================================== */
 
 function book(event) {
 
     event.preventDefault();
 
+
+    const namaElement =
+        document.getElementById("nama");
+
+    const hpElement =
+        document.getElementById("hp");
+
+    const layananElement =
+        document.getElementById("layanan");
+
+
+    if (!namaElement || !hpElement || !layananElement) {
+
+        return;
+
+    }
+
+
     const nama =
-        document.getElementById('nama').value;
+        namaElement.value.trim();
+
+    const hp =
+        hpElement.value.trim();
 
     const layanan =
-        document.getElementById('layanan').value;
+        layananElement.value;
+
+
+    if (!nama || !hp || !layanan) {
+
+        showToast(
+            "Silakan lengkapi data terlebih dahulu."
+        );
+
+        return;
+    }
+
 
     showToast(
-        'Appointment berhasil dibuat ✓'
+        "Appointment berhasil dibuat ✓"
     );
 
-    setTimeout(() => {
 
-        openWhatsApp(nama, layanan);
+    setTimeout(function() {
+
+        openWhatsApp(
+            nama,
+            hp,
+            layanan
+        );
 
     }, 700);
 }
 
 
-/* =========================
+/* =====================================================
    WHATSAPP
-========================= */
+===================================================== */
 
-function openWhatsApp(nama, layanan) {
+function openWhatsApp(
+    nama,
+    hp,
+    layanan
+) {
 
-    const message =
-        'Halo Audry Dental, saya ingin membuat appointment.%0A%0A' +
-        'Nama: ' + encodeURIComponent(nama) + '%0A' +
-        'Layanan: ' + encodeURIComponent(layanan);
+
+    /*
+       GANTI NOMOR DI BAWAH
+       DENGAN NOMOR WHATSAPP AUDRY DENTAL
+    */
 
     const phone =
-        '6280000000000';
+        "6280000000000";
+
+
+    const message =
+        "Halo Audry Dental,\n\n" +
+        "Saya ingin membuat appointment.\n\n" +
+        "Nama: " + nama + "\n" +
+        "No. WhatsApp: " + hp + "\n" +
+        "Layanan: " + layanan;
+
 
     const url =
-        'https://wa.me/' +
+        "https://wa.me/" +
         phone +
-        '?text=' +
-        message;
+        "?text=" +
+        encodeURIComponent(message);
 
-    window.open(url, '_blank');
+
+    window.open(
+        url,
+        "_blank"
+    );
 }
 
 
-/* =========================
+/* =====================================================
    ESCAPE KEY
-========================= */
+===================================================== */
 
-document.addEventListener('keydown', function(event) {
+document.addEventListener(
+    "keydown",
+    function(event) {
 
-    if (event.key === 'Escape') {
+        if (event.key === "Escape") {
 
-        closeMenu();
-        closeSearch();
+            closeMenu();
+
+            closeSearch();
+
+        }
 
     }
+);
 
-});
+
+/* =====================================================
+   CLOSE SEARCH WHEN CLICK OUTSIDE
+===================================================== */
+
+if (searchBox) {
+
+    searchBox.addEventListener(
+        "click",
+        function(event) {
+
+            if (event.target === searchBox) {
+
+                closeSearch();
+
+            }
+
+        }
+    );
+
+}
+
+
+/* =====================================================
+   CLOSE MOBILE MENU WHEN CLICK LINK
+===================================================== */
+
+if (mobileMenu) {
+
+    const mobileLinks =
+        mobileMenu.querySelectorAll("a");
+
+
+    mobileLinks.forEach(function(link) {
+
+        link.addEventListener(
+            "click",
+            function() {
+
+                closeMenu();
+
+            }
+        );
+
+    });
+
+}
